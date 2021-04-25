@@ -1,4 +1,6 @@
 from functools import singledispatch
+from store.views.order import OrderView
+from store.models.orders import Order
 from store.views.checkout import CheckOut
 from store.views.cart import Cart
 from django.urls import path, include
@@ -13,5 +15,6 @@ urlpatterns = [
     path('login', Login.as_view(), name='login'),
     path('logout', logout ),
     path('cart', Cart.as_view(), name = 'cart'),
-    path('check-out', CheckOut.as_view(), name = 'checkout')
+    path('check-out', CheckOut.as_view(), name = 'checkout'),
+    path('orders', OrderView.as_view(), name = 'orders'),
 ]
