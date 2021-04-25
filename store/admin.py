@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models.product import Product
 from .models.category import Category
 from .models.customer import Customer
+from .models.orders import Order
 # Register your models here.
 
 
@@ -15,7 +16,10 @@ class AdminCategory(admin.ModelAdmin):
 class Customers(admin.ModelAdmin):
     list_display = ['firstName','lastName','phone','email','password']
 
+class Orders(admin.ModelAdmin):
+    list_display = ['customer','quantity','price','date','status']
     
 admin.site.register(Product, AdminProduct)
 admin.site.register(Category, AdminCategory)
 admin.site.register(Customer, Customers)
+admin.site.register(Order, Orders)
