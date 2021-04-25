@@ -1,1 +1,1 @@
-web: gunicorn ecom.wsgi
+web: web: python manage.py runserver 0.0.0.0:$80 --noreload
